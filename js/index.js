@@ -37,7 +37,9 @@ links.forEach(curr => curr.addEventListener('mouseover', function (e) {
     });
 }));
 links.forEach(curr => curr.addEventListener('mouseout', function () {
-    curr.style.textShadow = 'none';
+    TweenMax.to(curr, 2.5, {
+        textShadow: 'none', ease: Elastic.easeOut.config(1, 0.3)
+    });
 }));
 
 // Prevent Page Refresh
