@@ -31,11 +31,13 @@ container.addEventListener('wheel', function () {
 });
 
 // Links
-links.forEach(curr => curr.addEventListener('mouseover', function () {
-    return curr.style.textShadow = 'black -2px 4px 5px', curr.style.transition = 'text-shadow 1s ease-out 0s';
+links.forEach(curr => curr.addEventListener('mouseover', function (e) {
+    TweenMax.to(curr, 2.5, {
+        textShadow: 'black -2px 4px 5px', ease: Elastic.easeOut.config(1, 0.3)
+    });
 }));
 links.forEach(curr => curr.addEventListener('mouseout', function () {
-    return curr.style.textShadow = 'none';
+    curr.style.textShadow = 'none';
 }));
 
 // Prevent Page Refresh
